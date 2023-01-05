@@ -8,10 +8,31 @@ export const Container = styled.div`
 
 export const Header = styled.header`
   display: flex;
+  position: relative;
   height: 10vh;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  a {
+    position: absolute;
+    color: ${(props) => props.theme.accentColor};
+    font-size: 36px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+  }
+  a:hover {
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
 `;
 
 export const Title = styled.h1`
@@ -19,24 +40,28 @@ export const Title = styled.h1`
   color: ${(props) => props.theme.accentColor};
 `;
 
-export const CoinList = styled.ul``;
+export const CoinList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 5px;
+`;
 
 export const Coin = styled.li`
-  background-color: white;
-  color: ${(props) => props.theme.bgColor};
+  width: 100%;
+  background-color: ${(props) => props.theme.itemColor};
+  color: ${(props) => props.theme.textColor};
   border-radius: 15px;
   margin-bottom: 10px;
-  transition: color 0.8s ease-in-out;
+  transition: color 0.3s ease-in-out;
   a {
     display: flex;
     align-items: center;
     transition: color 0.2s ease-in-out;
-    padding: 20px;
+    padding: 25px;
   }
   &:hover {
     a {
       color: ${(props) => props.theme.accentColor};
-      font-weight: bold;
     }
   }
 `;
@@ -55,7 +80,7 @@ export const CoinImg = styled.img`
 export const Overview = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.itemColor};
   padding: 10px 20px;
   border-radius: 10px;
 `;
@@ -88,7 +113,7 @@ export const Tab = styled.span<{ isActive: boolean }>`
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.itemColor};
   padding: 7px 0px;
   border-radius: 10px;
   color: ${(props) =>

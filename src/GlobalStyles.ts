@@ -33,7 +33,7 @@ body {
 	color: ${(props) => props.theme.textColor};
 	line-height: 1.2;
 }
-ol, ul {
+ol, ul, li {
 	list-style: none;
 }
 blockquote, q {
